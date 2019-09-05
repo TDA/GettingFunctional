@@ -10,5 +10,42 @@ function greetMore(name) {
 
 console.log("Hello stephan");
 
+function fibonacciTailRecursion(_number, _first, _second) {
+  while(true) {
+    var second = _second;
+    var first = _first;
+    var number = _number;
+    var match = number === 0;
+    if (match) {
+      return second;
+    } else {
+      _second = first;
+      _first = first + second | 0;
+      _number = number - 1 | 0;
+      continue ;
+    }
+  };
+}
+
+for(var x = 1; x <= 10; ++x){
+  console.log(fibonacciTailRecursion(x, 0, 1));
+}
+
+function fibonacciRegularRecursion(x) {
+  if (x < 2) {
+    return 0;
+  } else if (x === 2) {
+    return 1;
+  } else {
+    return fibonacciRegularRecursion(x - 1 | 0) + fibonacciRegularRecursion(x - 2 | 0) | 0;
+  }
+}
+
+for(var x$1 = 1; x$1 <= 10; ++x$1){
+  console.log(fibonacciRegularRecursion(x$1));
+}
+
 exports.greetMore = greetMore;
+exports.fibonacciTailRecursion = fibonacciTailRecursion;
+exports.fibonacciRegularRecursion = fibonacciRegularRecursion;
 /*  Not a pure module */
