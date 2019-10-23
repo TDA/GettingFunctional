@@ -15,3 +15,4 @@ object TailRecursion {
     println(fibonacciTailRecursion(number, firstNumber = first, secondNumber = second))
   }
 }
+
